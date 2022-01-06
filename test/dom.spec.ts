@@ -4,7 +4,7 @@ import { queries } from '@testing-library/dom';
 describe('application loading', () => {
   let screen: WebdriverIOBoundFunctions<typeof queries>;
 
-  before(async () => {
+  before(() => {
     screen = setupBrowser(browser);
   });
 
