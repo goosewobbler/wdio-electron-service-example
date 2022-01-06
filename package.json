@@ -1,0 +1,54 @@
+{
+  "name": "@goosewobbler/spectron-e2e-app",
+  "version": "1.0.0",
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "pnpm clean:dist && webpack && cross-env cp ./src/index.html ./dist && electron-builder",
+    "ci": "pnpm build && pnpm test",
+    "clean": "cross-env rm -rf ./node_modules ./all-logs && pnpm clean:dist",
+    "clean:dist": "cross-env rm -rf ./dist && cross-env mkdir -p ./dist",
+    "test": "pnpm exec wdio wdio.conf.js",
+    "lint": "eslint --ignore-path ../.eslintignore \"**/*.{j,t}s\""
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/webdriverio": "^3.0.5",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^17.0.8",
+    "@wdio/cli": "^7.16.12",
+    "@wdio/local-runner": "^7.16.12",
+    "@wdio/mocha-framework": "^7.16.11",
+    "chromedriver": "^97.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^16.0.4",
+    "electron-builder": "^22.14.5",
+    "expect-webdriverio": "^3.1.4",
+    "global-jsdom": "^8.4.0",
+    "jsdom": "^19.0.0",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "wdio-electron-service": "^2.0.2",
+    "webdriverio": "^7.16.12",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "engines": {
+    "node": ">=14.17.1"
+  },
+  "build": {
+    "asar": true,
+    "appId": "com.spectron-e2e.demo",
+    "copyright": "goosewobbler",
+    "productName": "spectron-e2e",
+    "files": [
+      "./dist/*"
+    ],
+    "linux": {
+      "executableName": "spectron-e2e",
+      "category": "Utility",
+      "target": [
+        "AppImage"
+      ]
+    }
+  }
+}
