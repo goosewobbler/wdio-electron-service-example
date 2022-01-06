@@ -11,7 +11,7 @@ const config = {
     [
       'electron',
       {
-        appPath: join(__dirname, 'app', 'dist'),
+        appPath: join(__dirname, 'dist'),
         appName: productName,
         appArgs: ['foo', 'bar=baz'],
         chromedriver: {
@@ -39,14 +39,14 @@ const config = {
     tsNodeOpts: {
       transpileOnly: true,
       files: true,
-      project: './tsconfig.json',
+      project: `${__dirname}/tsconfig.json`,
     },
 
     // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
     // do please make sure "tsconfig-paths" is installed as dependency
-    tsConfigPathsOpts: {
-      baseUrl: './',
-    },
+    // tsConfigPathsOpts: {
+    //   baseUrl: './',
+    // },
   },
   framework: 'mocha',
   mochaOpts: {
