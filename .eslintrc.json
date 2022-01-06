@@ -11,6 +11,8 @@
     "import/extensions": ["error", "never", { "json": "always" }],
     "import/no-default-export": "error",
     "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "node/no-unpublished-require": "off",
     "no-param-reassign": ["error", { "props": false }]
   },
   "globals": {
@@ -33,16 +35,17 @@
         "plugin:node/recommended"
       ],
       "parser": "@typescript-eslint/parser",
-      "plugins": ["@typescript-eslint", "import", "node", "prettier"],
+      "plugins": ["@typescript-eslint", "import", "node"],
       "env": {
-        "node": true
+        "node": true,
+        "mocha": true
       },
       "rules": {
         "no-unused-vars": "off",
         "import/prefer-default-export": "off",
-        "node/no-unpublished-import": "off", // enabled in packages
+        "node/no-unpublished-import": "off",
         "node/no-missing-import": "off", // duped by import
-        "node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules"] }]
+        "node/no-unsupported-features/es-syntax": ["error", { "ignores": ["modules"] }] // https://github.com/mysticatea/eslint-plugin-node/issues/250
       },
       "parserOptions": {
         "ecmaVersion": 2020,
