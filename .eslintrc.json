@@ -1,6 +1,6 @@
 {
   "extends": ["airbnb-base", "prettier", "plugin:node/recommended", "plugin:wdio/recommended"],
-  "plugins": ["import", "node", "prettier", "promise", "wdio"],
+  "plugins": ["import", "node", "promise", "wdio"],
   "env": {
     "browser": true,
     "es2020": true,
@@ -23,13 +23,13 @@
       "files": "*.ts",
       "extends": [
         "airbnb-base-typescript",
+        "prettier",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:import/errors",
         "plugin:import/typescript",
         "plugin:import/warnings",
-        "plugin:prettier/recommended",
         "plugin:node/recommended"
       ],
       "parser": "@typescript-eslint/parser",
