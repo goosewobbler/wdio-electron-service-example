@@ -1,5 +1,5 @@
 {
-  "name": "@goosewobbler/spectron-e2e-app",
+  "name": "wdio-electron-service-example",
   "version": "1.0.0",
   "main": "./dist/main.js",
   "scripts": {
@@ -37,14 +37,14 @@
   },
   "build": {
     "asar": true,
-    "appId": "com.spectron-e2e.demo",
+    "appId": "com.wdio-electron-service-example.demo",
     "copyright": "goosewobbler",
-    "productName": "spectron-e2e",
+    "productName": "wdio-electron-service-example",
     "files": [
       "./dist/*"
     ],
     "linux": {
-      "executableName": "spectron-e2e",
+      "executableName": "wdio-electron-service-example",
       "category": "Utility",
       "target": [
         "AppImage"

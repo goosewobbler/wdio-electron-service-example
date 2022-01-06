@@ -1,7 +1,5 @@
 /* eslint no-console: off */
 const { app, BrowserWindow, ipcMain } = require('electron');
-const path = require('path');
-const fs = require('fs');
 
 const appPath = app.getAppPath();
 
@@ -47,12 +45,6 @@ app.on('ready', () => {
     const bounds = mainWindow.getBounds();
     mainWindow.setBounds({ ...bounds, height: bounds.height - 10, width: bounds.width - 10 });
   });
-});
-
-app.on('will-quit', () => {
-  if (fs.existsSync(process.env.SPECTRON_TEMP_DIR)) {
-    fs.writeFileSync(path.join(process.env.SPECTRON_TEMP_DIR, 'quit.txt'), '');
-  }
 });
 
 ipcMain.on('ipc-event', (event, count) => {
