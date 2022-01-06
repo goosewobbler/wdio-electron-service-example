@@ -4,37 +4,61 @@
   "main": "./dist/main.js",
   "scripts": {
     "build": "pnpm clean:dist && webpack && cross-env cp ./src/index.html ./dist && electron-builder",
-    "ci": "pnpm build && pnpm test",
+    "ci": "pnpm build && pnpm test && pnpm lint",
     "clean": "cross-env rm -rf ./node_modules ./all-logs && pnpm clean:dist",
     "clean:dist": "cross-env rm -rf ./dist && cross-env mkdir -p ./dist",
-    "test": "pnpm exec wdio wdio.conf.js",
-    "lint": "eslint --ignore-path ../.eslintignore \"**/*.{j,t}s\""
+    "format": "prettier --write \"**/*.{j,t}s\"",
+    "lint": "eslint \"**/*.{j,t}s\"",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
+    "test": "pnpx wdio wdio.conf.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.11.1",
     "@testing-library/webdriverio": "^3.0.5",
     "@types/mocha": "^9.0.0",
     "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
     "@wdio/cli": "^7.16.12",
     "@wdio/local-runner": "^7.16.12",
     "@wdio/mocha-framework": "^7.16.11",
-    "chromedriver": "^97.0.0",
     "cross-env": "^7.0.3",
     "electron": "^16.0.4",
     "electron-builder": "^22.14.5",
+    "eslint": "^8.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-base-typescript": "^1.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^25.3.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-wdio": "^7.4.2",
     "expect-webdriverio": "^3.1.4",
     "global-jsdom": "^8.4.0",
+    "husky": "^7.0.4",
     "jsdom": "^19.0.0",
+    "lint-staged": "^12.1.5",
+    "prettier": "^2.5.1",
     "ts-node": "^10.4.0",
-    "tsconfig-paths": "^3.12.0",
     "typescript": "^4.5.4",
-    "wdio-electron-service": "^2.0.2",
+    "wdio-electron-service": "^2.0.3",
     "webdriverio": "^7.16.12",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
   },
   "engines": {
     "node": ">=14.17.1"
+  },
+  "lint-staged": {
+    "**/*.{js,ts}": [
+      "eslint --fix"
+    ],
+    "**/*.{yml,json,md,ts,js}": [
+      "prettier --write"
+    ]
   },
   "build": {
     "asar": true,
