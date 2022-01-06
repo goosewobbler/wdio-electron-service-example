@@ -5,7 +5,7 @@
   "scripts": {
     "build": "pnpm clean:dist && webpack && cross-env cp ./src/index.html ./dist && electron-builder",
     "ci": "pnpm build && pnpm test && pnpm lint",
-    "clean": "cross-env rm -rf ./node_modules ./all-logs && pnpm clean:dist",
+    "clean": "pnpm clean:dist && cross-env rm -rf ./node_modules ./all-logs",
     "clean:dist": "cross-env rm -rf ./dist && cross-env mkdir -p ./dist",
     "format": "prettier --write \"**/*.{j,t}s\"",
     "lint": "eslint \"**/*.{j,t}s\"",
