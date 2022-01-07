@@ -31,7 +31,7 @@ specifiers:
   prettier: ^2.5.1
   ts-node: ^10.4.0
   typescript: ^4.5.4
-  wdio-electron-service: ^2.0.3
+  wdio-electron-service: ^2.0.4
   webdriverio: ^7.16.12
   webpack: ^5.65.0
   webpack-cli: ^4.9.1
@@ -67,7 +67,7 @@ devDependencies:
   prettier: 2.5.1
   ts-node: 10.4.0_faf01e1d5a40372a98081522dcafc186
   typescript: 4.5.4
-  wdio-electron-service: 2.0.3_@wdio+cli@7.16.12
+  wdio-electron-service: 2.0.4_@wdio+cli@7.16.12
   webdriverio: 7.16.12
   webpack: 5.65.0_webpack-cli@4.9.1
   webpack-cli: 4.9.1_webpack@5.65.0
@@ -5832,8 +5832,8 @@ packages:
       defaults: 1.0.3
     dev: true
 
-  /wdio-chromedriver-service/7.2.5_@wdio+cli@7.16.12:
-    resolution: {integrity: sha512-tHwp40B2qZQw6PC2CIhUCayz0K17B2TxXZkt6+CI62f54FgUXObzlo090/k9A2pMhOqdGtenAnQp3w/aF4DiPA==}
+  /wdio-chromedriver-service/7.2.6_@wdio+cli@7.16.12:
+    resolution: {integrity: sha512-nepyo50jXfkLjRPdVmnZ55+YcPI6xSzYJ6ReAfHEGbwQcIqx6G+8zyynvBM7BIjWGdCwEpX6dbyVTTnt1xh/Kw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       '@wdio/cli': ^7.0.0
@@ -5841,6 +5841,8 @@ packages:
       chromedriver: '*'
     peerDependenciesMeta:
       '@wdio/types':
+        optional: true
+      chromedriver:
         optional: true
     dependencies:
       '@wdio/cli': 7.16.12
@@ -5852,15 +5854,15 @@ packages:
       - supports-color
     dev: true
 
-  /wdio-electron-service/2.0.3_@wdio+cli@7.16.12:
-    resolution: {integrity: sha512-ncbaaE6CXCh9FUzmBwXt9NT4JCbmAOJzRqVwAepKVPUy93khCZJoGA2+Qe1LbQXQBGJT9yLvTG07hGnkSt3yhQ==}
+  /wdio-electron-service/2.0.4_@wdio+cli@7.16.12:
+    resolution: {integrity: sha512-cKF6PpBzU8ghPqxknMw018VMiS6jAXHxrG4DOkhGXhMcnlIinNBXLl087OrmPC+wZ1jYMfiO2T2qrqrF9iIkNw==}
     engines: {node: '>=14.0.0'}
     requiresBuild: true
     dependencies:
       '@wdio/logger': 7.16.0
       ci-info: 3.3.0
       electron-chromedriver: 16.0.0
-      wdio-chromedriver-service: 7.2.5_@wdio+cli@7.16.12
+      wdio-chromedriver-service: 7.2.6_@wdio+cli@7.16.12
       webdriverio: 7.16.12
     transitivePeerDependencies:
       - '@wdio/cli'
