@@ -34,7 +34,7 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^25.3.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-wdio": "^7.4.2",
     "expect-webdriverio": "^3.1.4",
     "global-jsdom": "^8.4.0",
