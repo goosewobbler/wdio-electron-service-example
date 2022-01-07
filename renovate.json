@@ -1,5 +1,16 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "group:allNonMajor",
+    "config:semverAllMonthly",
+    "schedule:monthly",
+    ":maintainLockFilesMonthly",
+    ":separateMultipleMajorReleases",
+    ":enableVulnerabilityAlerts",
+    ":npm",
+    ":automergePatch",
+    ":automergePr",
+    ":automergeTypes",
+    ":rebaseStalePrs"
   ]
 }
