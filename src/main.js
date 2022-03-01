@@ -34,6 +34,7 @@ app.on('ready', () => {
   mainWindow.loadFile(`${appRootPath}/index.html`);
 
   mainWindow.on('ready-to-show', () => {
+    mainWindow.title = 'this is the title of the main window';
     // mainWindow.webContents.openDevTools();
   });
 

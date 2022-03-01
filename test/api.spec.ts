@@ -21,4 +21,16 @@ describe('electron APIs', () => {
       expect(appVersion).toEqual(version);
     });
   });
+  describe('mainProcess', () => {
+    it('should retrieve the process type through the electron API', async () => {
+      const processType = await browser.electronMainProcess('type');
+      expect(processType).toEqual('browser');
+    });
+  });
+  describe('browserWindow', () => {
+    it('should retrieve the window title through the electron API', async () => {
+      const windowTitle = await browser.electronBrowserWindow('title');
+      expect(windowTitle).toEqual('this is the title of the main window');
+    });
+  });
 });
