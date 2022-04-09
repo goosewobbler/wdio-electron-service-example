@@ -31,7 +31,7 @@ specifiers:
   prettier: ^2.6.2
   ts-node: ^10.7.0
   typescript: ^4.6.3
-  wdio-electron-service: ^3.0.0
+  wdio-electron-service: ^3.0.1
   webdriverio: ^7.19.3
   webpack: ^5.72.0
   webpack-cli: ^4.9.2
@@ -67,7 +67,7 @@ devDependencies:
   prettier: 2.6.2
   ts-node: 10.7.0_ee885bc7281b682b6adbed6ae09ee090
   typescript: 4.6.3
-  wdio-electron-service: 3.0.0_e2dd1e3774b81727b14ead43c0ed3f23
+  wdio-electron-service: 3.0.1_e2dd1e3774b81727b14ead43c0ed3f23
   webdriverio: 7.19.3_typescript@4.6.3
   webpack: 5.72.0_webpack-cli@4.9.2
   webpack-cli: 4.9.2_webpack@5.72.0
@@ -6013,8 +6013,8 @@ packages:
       - supports-color
     dev: true
 
-  /wdio-electron-service/3.0.0_e2dd1e3774b81727b14ead43c0ed3f23:
-    resolution: {integrity: sha512-8lXvt1GSg/tLXrHazpi0mtVYiPPf6GpPDAE3URUdqNqEjmjoI/y8bpb6PgqBuN+PPFc8pIInRJoCmSk9DTDh/A==}
+  /wdio-electron-service/3.0.1_e2dd1e3774b81727b14ead43c0ed3f23:
+    resolution: {integrity: sha512-2OntBGoa4MlLDSNcwfri0jVLj8KHzR87+q2VdX+bNuy+fgFrzaIQf9E7Lii1/1mVdCnapCi18NHQl9j2oV27GA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       electron: '*'
