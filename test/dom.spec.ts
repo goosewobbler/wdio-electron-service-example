@@ -1,3 +1,4 @@
+/* eslint-disable wdio/await-expect */
 import { setupBrowser, WebdriverIOBoundFunctions } from '@testing-library/webdriverio';
 import { queries } from '@testing-library/dom';
 
