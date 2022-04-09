@@ -1,5 +1,6 @@
 /* eslint no-console: off */
 const { app, BrowserWindow, ipcMain } = require('electron');
+require('wdio-electron-service/main');
 
 const appPath = app.getAppPath();
 
@@ -33,6 +34,7 @@ app.on('ready', () => {
   mainWindow.loadFile(`${appRootPath}/index.html`);
 
   mainWindow.on('ready-to-show', () => {
+    mainWindow.title = 'this is the title of the main window';
     // mainWindow.webContents.openDevTools();
   });
 
@@ -45,6 +47,9 @@ app.on('ready', () => {
     const bounds = mainWindow.getBounds();
     mainWindow.setBounds({ ...bounds, height: bounds.height - 10, width: bounds.width - 10 });
   });
+
+  // custom main process API
+  ipcMain.handle('wdio-electron', () => 'test');
 });
 
 ipcMain.on('ipc-event', (event, count) => {

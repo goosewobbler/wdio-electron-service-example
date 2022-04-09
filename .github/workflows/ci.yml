@@ -13,8 +13,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-        node-version: [14.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [16.x]
 
     steps:
       - name: Fix git checkout line endings
@@ -36,7 +36,7 @@ jobs:
 
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.25.0
+          version: 6.32.4
           run_install: true
       - name: Run headless test
         uses: GabrielBB/xvfb-action@v1

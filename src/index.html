@@ -31,6 +31,9 @@
     </label>
     <textarea class="none" rows="10" cols="80" data-testid="hidden-textarea"></textarea>
     <div class="keypress-count" data-testid="keypress-count"></div>
+    <div class="click-count" data-testid="click-count">
+      Bigger clicked: <span class="bigger">0</span> Smaller clicked: <span class="smaller">0</span>
+    </div>
   </body>
 
   <script nonce="4QEemGb0xJptpIGFP3Nd">
@@ -39,9 +42,13 @@
         document.querySelector('.keypress-count').innerText += String.fromCharCode(event.keyCode);
       });
       document.querySelector('.make-bigger').addEventListener('click', () => {
+        const biggerClickCount = parseInt(document.querySelector('.bigger').innerText);
+        document.querySelector('.bigger').innerText = biggerClickCount + 1;
         window.api.invoke('increase-window-size');
       });
       document.querySelector('.make-smaller').addEventListener('click', () => {
+        const smallerClickCount = parseInt(document.querySelector('.smaller').innerText);
+        document.querySelector('.smaller').innerText = smallerClickCount + 1;
         window.api.invoke('decrease-window-size');
       });
     });
