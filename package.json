@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "./dist/main.js",
   "scripts": {
-    "build": "pnpm clean:dist && webpack && cross-env cp ./src/index.html ./dist && electron-builder -p never",
+    "build": "pnpm clean:dist && webpack && cp ./src/index.html ./dist && electron-builder -p never",
     "ci": "pnpm build && pnpm test && pnpm lint",
-    "clean": "pnpm clean:dist && cross-env rm -rf ./node_modules ./all-logs",
-    "clean:dist": "cross-env rm -rf ./dist && cross-env mkdir -p ./dist",
+    "clean": "pnpm clean:dist && rm -rf ./node_modules ./all-logs",
+    "clean:dist": "rm -rf ./dist && mkdir -p ./dist",
     "format": "prettier --write \"**/*.{j,t}s\"",
     "lint": "eslint \"**/*.{j,t}s\"",
     "prepare": "husky install",
