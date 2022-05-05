@@ -10,7 +10,7 @@
     "format": "prettier --write \"**/*.{j,t}s\"",
     "lint": "eslint \"**/*.{j,t}s\"",
     "prepare": "husky install",
-    "test": "wdio run ./wdio.conf.js || type ./wdio-logs/*.log"
+    "test": "wdio run ./wdio.conf.js || cat ./wdio-logs/wdio.log && cat ./wdio-logs/wdio-chromedriver.log"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.13.0",
