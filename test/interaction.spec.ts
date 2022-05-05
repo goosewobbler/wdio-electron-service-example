@@ -13,10 +13,6 @@ describe('application loading', () => {
       await browser.keys(['y', 'o']);
       expect(await (await screen.getByTestId('keypress-count')).getText()).toEqual('YO');
     });
-
-    it('should reset state for each test', async () => {
-      expect(await (await screen.getByTestId('keypress-count')).getText()).toEqual('');
-    });
   });
 
   describe('click events', () => {
@@ -39,13 +35,13 @@ describe('application loading', () => {
     describe('when the make smaller button is clicked', () => {
       it('decreases the window height and width by 10 pixels', async () => {
         let bounds = (await browser.electronBrowserWindow('getBounds')) as { width: number; height: number };
-        expect(bounds.width).toEqual(200);
-        expect(bounds.height).toEqual(300);
+        expect(bounds.width).toEqual(210);
+        expect(bounds.height).toEqual(310);
         const elem = await browser.$('.make-smaller');
         await elem.click();
         bounds = (await browser.electronBrowserWindow('getBounds')) as { width: number; height: number };
-        expect(bounds.width).toEqual(190);
-        expect(bounds.height).toEqual(290);
+        expect(bounds.width).toEqual(200);
+        expect(bounds.height).toEqual(300);
       });
     });
   });
