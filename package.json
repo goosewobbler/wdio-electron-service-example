@@ -23,7 +23,7 @@
     "@wdio/local-runner": "^7.19.3",
     "@wdio/mocha-framework": "^7.19.3",
     "cross-env": "^7.0.3",
-    "electron": "^18.0.3",
+    "electron": "^19.0.0",
     "electron-builder": "^22.14.13",
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
