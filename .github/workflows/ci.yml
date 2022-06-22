@@ -34,9 +34,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
 
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: pnpm/action-setup@v2
         with:
-          version: 6.32.4
+          version: 7.3.0
           run_install: true
       - name: Run headless test
         uses: GabrielBB/xvfb-action@v1

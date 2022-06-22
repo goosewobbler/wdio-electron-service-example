@@ -24,7 +24,8 @@
     {
       "files": "*.ts",
       "extends": [
-        "airbnb-base-typescript",
+        "airbnb-base",
+        "airbnb-typescript/base",
         "prettier",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
