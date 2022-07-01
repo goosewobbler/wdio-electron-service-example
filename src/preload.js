@@ -1,5 +1,10 @@
+/* eslint global-require: off */
 const { contextBridge, ipcRenderer } = require('electron');
-require('wdio-electron-service/preload');
+const { isTest } = require('./util');
+
+if (isTest) {
+  require('wdio-electron-service/preload');
+}
 
 const validChannels = ['increase-window-size', 'decrease-window-size'];
 

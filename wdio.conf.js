@@ -6,6 +6,8 @@ const {
   build: { productName },
 } = packageJson;
 
+process.env.TEST = true;
+
 const config = {
   services: [
     [
