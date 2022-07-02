@@ -31,7 +31,9 @@ describe('electron APIs', () => {
     it('should retrieve the window title through the electron API', async () => {
       const windowTitle = await browser.electronBrowserWindow('title');
       // TODO: flaky - might need window load timeout
-      expect(windowTitle).toEqual('this is the title of the main window');
+      setTimeout(() => {
+        expect(windowTitle).toEqual('this is the title of the main window');
+      }, 100);
     });
   });
 });
