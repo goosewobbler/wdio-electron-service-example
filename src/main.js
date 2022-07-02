@@ -1,6 +1,10 @@
-/* eslint no-console: off */
+/* eslint no-console: off, global-require: off */
 const { app, BrowserWindow, ipcMain } = require('electron');
-require('wdio-electron-service/main');
+const { isTest } = require('./util');
+
+if (isTest) {
+  require('wdio-electron-service/main');
+}
 
 const appPath = app.getAppPath();
 
