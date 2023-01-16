@@ -11,9 +11,9 @@ specifiers:
   '@wdio/local-runner': ^7.20.5
   '@wdio/mocha-framework': ^7.20.3
   debug: ^4.3.4
-  electron: ^19.0.7
+  electron: ^20.0.0
   electron-builder: ^23.1.0
-  electron-chromedriver: ^19.0.0
+  electron-chromedriver: ^20.0.0
   eslint: ^8.18.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-airbnb-typescript: ^17.0.0
@@ -48,9 +48,9 @@ devDependencies:
   '@wdio/local-runner': 7.20.5_irzuu4iqhlrdqkjwlmmso4xcx4
   '@wdio/mocha-framework': 7.20.3_typescript@4.7.4
   debug: 4.3.4
-  electron: 19.0.7
+  electron: 20.1.1
   electron-builder: 23.1.0
-  electron-chromedriver: 19.0.0
+  electron-chromedriver: 20.0.0
   eslint: 8.18.0
   eslint-config-airbnb-base: 15.0.0_srrmf5la5dmnsfe2mpg6sboreu
   eslint-config-airbnb-typescript: 17.0.0_dxihei56gvjeexz24nn4f6of3a
@@ -69,7 +69,7 @@ devDependencies:
   prettier: 2.7.1
   ts-node: 10.8.1_qiyc72axg2v44xl4yovan2v55u
   typescript: 4.7.4
-  wdio-electron-service: 3.4.0_kcdnw5lnkqojmdjauhgj7jshla
+  wdio-electron-service: 3.4.0_mcyzveuel3hzqdazsods2kvvbq
   webdriverio: 7.20.5_typescript@4.7.4
   webpack: 5.73.0_webpack-cli@4.10.0
   webpack-cli: 4.10.0_webpack@5.73.0
@@ -1332,7 +1332,7 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.1.4
       es-abstract: 1.19.2
-      get-intrinsic: 1.1.1
+      get-intrinsic: 1.1.2
       is-string: 1.0.7
     dev: true
 
@@ -1877,16 +1877,6 @@ packages:
     resolution: {integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=}
     dev: true
 
-  /concat-stream/1.6.2:
-    resolution: {integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==}
-    engines: {'0': node >= 0.8}
-    dependencies:
-      buffer-from: 1.1.2
-      inherits: 2.0.4
-      readable-stream: 2.3.7
-      typedarray: 0.0.6
-    dev: true
-
   /config-chain/1.1.13:
     resolution: {integrity: sha512-qj+f8APARXHrM0hraqXYb2/bOVSV4PvJQlNZ/DVj0QrmNM2q2euizkeuVckQ57J+W0mRH6Hvi+k50M4Jul2VRQ==}
     dependencies:
@@ -2342,8 +2332,8 @@ packages:
       - supports-color
     dev: true
 
-  /electron-chromedriver/19.0.0:
-    resolution: {integrity: sha512-y9OR4hqInuZwApGUCnKeKyEp8of6CvX2+g1qrC2SinR8Z56gZWGPBjWd2yb4nfwhoJ6imC1n4r4Ncti2Lksdyw==}
+  /electron-chromedriver/20.0.0:
+    resolution: {integrity: sha512-9zDieoUtJIAcAZ8FNjDjKLTOvweLUTnJEqyszoR8LC23c1+Urx3t33Oj0cLjz0ValtzjChQ6zJt+GQrNZklB3g==}
     engines: {node: '>=10.12.0'}
     hasBin: true
     requiresBuild: true
@@ -2387,15 +2377,15 @@ packages:
     resolution: {integrity: sha512-ZPLdq3kcATkD6dwne5M4SgJBHw21t90BqTGzf3AceJwj3cE/ICv6jyDwHYyJoF4JNuXM3pzRxlaRmpO7pdwmcg==}
     dev: true
 
-  /electron/19.0.7:
-    resolution: {integrity: sha512-Wyg+oGkY8cWYmm8tVka6CZmhJxnyUx+Us2ALyWiY4w73+dO9XUNB/c7vQNIm1Uk/DLMn9vFzgvcS9YtOOMqpbg==}
-    engines: {node: '>= 8.6'}
+  /electron/20.1.1:
+    resolution: {integrity: sha512-cFTfP4R2O5onaXiu+S20xK7eLpyX/H7PYk7lj9mlHS0ui1+w1jDDWD3RhvjmPgeksPfMAZiRLK8lAQvzSBAKdg==}
+    engines: {node: '>= 10.17.0'}
     hasBin: true
     requiresBuild: true
     dependencies:
       '@electron/get': 1.14.1
       '@types/node': 16.11.42
-      extract-zip: 1.7.0
+      extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2936,18 +2926,6 @@ packages:
       tmp: 0.0.33
     dev: true
 
-  /extract-zip/1.7.0:
-    resolution: {integrity: sha512-xoh5G1W/PB0/27lXgMQyIhP5DSY/LhoCsOyZgb+6iMmRtCwVBo55uKaMoEYrDCKQhWvqEip5ZPKAc6eFNyf/MA==}
-    hasBin: true
-    dependencies:
-      concat-stream: 1.6.2
-      debug: 2.6.9
-      mkdirp: 0.5.6
-      yauzl: 2.10.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /extract-zip/2.0.1:
     resolution: {integrity: sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==}
     engines: {node: '>= 10.17.0'}
@@ -3165,14 +3143,6 @@ packages:
   /get-caller-file/2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
     engines: {node: 6.* || 8.* || >= 10.*}
-    dev: true
-
-  /get-intrinsic/1.1.1:
-    resolution: {integrity: sha512-kWZrnVM42QCiEA2Ig1bG8zjoIMOgxWwYCEeNdwY6Tv/cOSeGpcoX4pXHfKUxNKVoArnrEr2e9srnAxxGIraS9Q==}
-    dependencies:
-      function-bind: 1.1.1
-      has: 1.0.3
-      has-symbols: 1.0.3
     dev: true
 
   /get-intrinsic/1.1.2:
@@ -4517,13 +4487,6 @@ packages:
 
   /mkdirp-classic/0.5.3:
     resolution: {integrity: sha512-gKLcREMhtuZRwRAfqP3RFW+TK4JqApVBtOIftVgjuABpAtpxhPGaDcfvbhNvD0B8iD1oUr/txX35NjcaY6Ns/A==}
-    dev: true
-
-  /mkdirp/0.5.6:
-    resolution: {integrity: sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==}
-    hasBin: true
-    dependencies:
-      minimist: 1.2.6
     dev: true
 
   /mkdirp/1.0.4:
@@ -6016,10 +5979,6 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
-  /typedarray/0.0.6:
-    resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
-    dev: true
-
   /typescript/4.7.4:
     resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
     engines: {node: '>=4.2.0'}
@@ -6197,7 +6156,7 @@ packages:
       - supports-color
     dev: true
 
-  /wdio-electron-service/3.4.0_kcdnw5lnkqojmdjauhgj7jshla:
+  /wdio-electron-service/3.4.0_mcyzveuel3hzqdazsods2kvvbq:
     resolution: {integrity: sha512-4VCZIcrg4elNHtb2XDAZH6sRFoGMFgMuKOk9jZ+oOoyvw3y285sDTF8dsyocvhZhedozgh6uQB7QHCZ8xNzUsw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -6211,8 +6170,8 @@ packages:
     dependencies:
       '@wdio/logger': 7.19.0
       ci-info: 3.3.2
-      electron: 19.0.7
-      electron-chromedriver: 19.0.0
+      electron: 20.1.1
+      electron-chromedriver: 20.0.0
       wdio-chromedriver-service: 7.3.2_n32ydzcjzl5bq3hpo65ryutvi4
       webdriverio: 7.20.5_typescript@4.7.4
     transitivePeerDependencies:
