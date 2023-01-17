@@ -20,6 +20,7 @@ const config = {
           port: 9519,
           logFileName: 'wdio-chromedriver.log',
         },
+        electronVersion: '22.0.0'
       },
     ],
   ],
@@ -35,6 +36,7 @@ const config = {
   autoCompileOpts: {
     autoCompile: true,
     tsNodeOpts: {
+      esm: true,
       transpileOnly: true,
       files: true,
       project: join(__dirname, 'tsconfig.json'),
