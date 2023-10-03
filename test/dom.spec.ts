@@ -1,31 +1,33 @@
-/* eslint-disable wdio/await-expect */
-import { setupBrowser, WebdriverIOBoundFunctions } from '@testing-library/webdriverio';
-import { queries } from '@testing-library/dom';
+import { setupBrowser, type WebdriverIOQueries } from '@testing-library/webdriverio';
 
 describe('application loading', () => {
-  let screen: WebdriverIOBoundFunctions<typeof queries>;
+  let screen: WebdriverIOQueries;
 
   before(() => {
     screen = setupBrowser(browser);
   });
 
-  // Cover a few WebdriverIO expect matchers -  https://webdriver.io/docs/api/expect-webdriverio
-
   describe('DOM', () => {
     it('should determine when an element is in the document', async () => {
-      expect(await screen.getByTestId('disabled-checkbox')).not.toExist();
+      await expect(await screen.getByTestId('disabled-checkbox')).toExist();
     });
 
     it('should determine when an element is not in the document', async () => {
-      expect(await screen.queryByTestId('not-there')).toExist();
+      await expect(await screen.queryByTestId('not-there')).not.toExist();
     });
 
     it('should determine when an element is visible', async () => {
-      expect(await screen.getByTestId('disabled-checkbox')).not.toBeDisplayed();
+      await expect(await screen.getByTestId('disabled-checkbox')).toBeDisplayed();
     });
 
     it('should determine when an element is not visible', async () => {
-      expect(await screen.getByTestId('hidden-textarea')).toBeDisplayed();
+      await expect(await screen.getByTestId('hidden-textarea')).not.toBeDisplayed();
+    });
+  });
+
+  describe('WDIO Matchers', () => {
+    it('should be able to use WebdriverIO matchers', async () => {
+      await expect(await $('#disabled-checkbox')).toBePresent();
     });
   });
 });

@@ -1,3 +1,4 @@
+const { getBinaryPath } = require('wdio-electron-service/utils');
 const { join } = require('path');
 const fs = require('fs');
 
@@ -9,22 +10,16 @@ const {
 process.env.TEST = true;
 
 const config = {
-  services: [
-    [
-      'electron',
-      {
-        appPath: join(__dirname, 'dist'),
-        appName: productName,
+  services: ['electron'],
+  capabilities: [
+    {
+      'browserName': 'electron',
+      'wdio:electronServiceOptions': {
+        appBinaryPath: getBinaryPath(__dirname, productName),
         appArgs: ['foo', 'bar=baz'],
-        chromedriver: {
-          port: 9519,
-          logFileName: 'wdio-chromedriver.log',
-        },
       },
-    ],
+    },
   ],
-  capabilities: [{}],
-  port: 9519,
   waitforTimeout: 5000,
   connectionRetryCount: 10,
   connectionRetryTimeout: 30000,
