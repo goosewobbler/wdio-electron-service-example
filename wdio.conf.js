@@ -1,11 +1,10 @@
-const { getBinaryPath } = require('wdio-electron-service/utils');
-const { join } = require('path');
+const path = require('path');
 const fs = require('fs');
 
-const packageJson = JSON.parse(fs.readFileSync('./package.json'));
-const {
-  build: { productName },
-} = packageJson;
+const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), { encoding: 'utf-8' }));
+
+globalThis.packageJson = packageJson;
+// process.env.TEST = 'true';
 
 process.env.TEST = true;
 
@@ -15,8 +14,8 @@ const config = {
     {
       'browserName': 'electron',
       'wdio:electronServiceOptions': {
-        appBinaryPath: getBinaryPath(__dirname, productName),
         appArgs: ['foo', 'bar=baz'],
+        restoreMocks: true,
       },
     },
   ],
@@ -32,7 +31,7 @@ const config = {
     tsNodeOpts: {
       transpileOnly: true,
       files: true,
-      project: join(__dirname, 'tsconfig.json'),
+      project: path.join(__dirname, 'tsconfig.json'),
     },
   },
   framework: 'mocha',
