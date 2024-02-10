@@ -62,6 +62,9 @@ devDependencies:
   global-jsdom:
     specifier: ^24.0.0
     version: 24.0.0(jsdom@24.0.0)
+  globals:
+    specifier: ^13.24.0
+    version: 13.24.0
   husky:
     specifier: ^9.0.10
     version: 9.0.10
