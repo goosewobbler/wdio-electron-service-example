@@ -6,7 +6,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.jso
 globalThis.packageJson = packageJson;
 // process.env.TEST = 'true';
 
-process.env.TEST = true;
+process.env.TEST = 'true';
 
 const config = {
   services: ['electron'],
