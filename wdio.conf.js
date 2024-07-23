@@ -26,14 +26,7 @@ const config = {
   runner: 'local',
   outputDir: 'wdio-logs',
   specs: ['./test/*.spec.ts'],
-  autoCompileOpts: {
-    autoCompile: true,
-    tsNodeOpts: {
-      transpileOnly: true,
-      files: true,
-      project: path.join(__dirname, 'tsconfig.json'),
-    },
-  },
+  tsConfigPath: path.join(__dirname, 'tsconfig.json'),
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
