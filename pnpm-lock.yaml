@@ -90,8 +90,8 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
       wdio-electron-service:
-        specifier: next
-        version: 7.0.0-beta.10(electron@31.4.0)(webdriverio@9.0.4)
+        specifier: 7.0.0-beta.11
+        version: 7.0.0-beta.11(electron@31.4.0)(webdriverio@9.0.4)
       webdriverio:
         specifier: ^9.0.4
         version: 9.0.4
@@ -693,11 +693,11 @@ packages:
     resolution: {integrity: sha512-uykgVBy8X/SgrExgS9NMxC5TnxkktrlHdzhDt0stgeONPj21oSkBfUu9bxyxEvVfzfL43wppatpCBmdsUuHbvA==}
     engines: {node: '>=18'}
 
-  '@wdio/electron-types@7.0.0-beta.10':
-    resolution: {integrity: sha512-HnPquajLU576cX5dPUk7spBCeziwTDVzd8PS70y8c/K/0iKZNp/W3dywedJ+A08ZxoACI5BiMmHT9G4yt3EzQg==}
+  '@wdio/electron-types@7.0.0-beta.11':
+    resolution: {integrity: sha512-JMcOCA3CkG8SzbzmgzgruRYE/UuoGLbl5SaNlKTOjsOElr8WwUwcpp6I/0lZ3r1B9jDXiXb5x8UGUSV+7ZJZhw==}
 
-  '@wdio/electron-utils@7.0.0-beta.10':
-    resolution: {integrity: sha512-xDbwK7lggQdtRFPA31A7OUJL/9XwMWd+unV3UOSutncyv2zkujw8LIijYFJuGB64CpSeRPPKillC+qqfHgxR+g==}
+  '@wdio/electron-utils@7.0.0-beta.11':
+    resolution: {integrity: sha512-L3D1Wi3VMVKXmA/L/Xveho/4F0Dk4DPB9dkucSWtam7XggNeZS62WLP6ByE9BOD99KsBFVZcdm8LD2UVYXoNqA==}
     engines: {node: '>=18 || >=20'}
 
   '@wdio/globals@9.0.4':
@@ -3527,8 +3527,8 @@ packages:
     resolution: {integrity: sha512-TnbFSbcOCcDgjZ4piURLCbJ3nJhznVh9kw6F6iokjiFPl8ONxe9A6nMDVXDiNbrSfLILs6vB07F7wLBrwPYzJw==}
     engines: {node: '>=10.13.0'}
 
-  wdio-electron-service@7.0.0-beta.10:
-    resolution: {integrity: sha512-8PSxss4CYSRgrQrKQtuTVuc8eY2Lq1YBopNnltOhjkEqP+h3l1Z1/TY6CbNRpl2dOrK0I9gDmLNH9WCIalvq3A==}
+  wdio-electron-service@7.0.0-beta.11:
+    resolution: {integrity: sha512-NrdtHHBNwUGXbjPqNaeqkSsPtNWF3qTJrlnNCSLhFNT0JsJ8C4Kwb+lyeCmQV45jgr+aaNWENV0r1b4SwaPqtg==}
     engines: {node: '>=18 || >=20'}
     peerDependencies:
       electron: '*'
@@ -4491,9 +4491,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@wdio/electron-types@7.0.0-beta.10': {}
+  '@wdio/electron-types@7.0.0-beta.11': {}
 
-  '@wdio/electron-utils@7.0.0-beta.10':
+  '@wdio/electron-utils@7.0.0-beta.11':
     dependencies:
       '@electron/packager': 18.3.3
       '@wdio/logger': 9.0.4
@@ -7655,11 +7655,11 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
 
-  wdio-electron-service@7.0.0-beta.10(electron@31.4.0)(webdriverio@9.0.4):
+  wdio-electron-service@7.0.0-beta.11(electron@31.4.0)(webdriverio@9.0.4):
     dependencies:
       '@vitest/spy': 2.0.5
-      '@wdio/electron-types': 7.0.0-beta.10
-      '@wdio/electron-utils': 7.0.0-beta.10
+      '@wdio/electron-types': 7.0.0-beta.11
+      '@wdio/electron-utils': 7.0.0-beta.11
       '@wdio/logger': 9.0.4
       compare-versions: 6.1.1
       debug: 4.3.6(supports-color@8.1.1)
