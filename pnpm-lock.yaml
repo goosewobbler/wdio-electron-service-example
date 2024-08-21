@@ -33,16 +33,16 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5
       '@wdio/cli':
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4
       '@wdio/globals':
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4(@wdio/logger@9.0.4)
       '@wdio/local-runner':
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4
       '@wdio/mocha-framework':
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4
       debug:
         specifier: ^4.3.6
@@ -60,7 +60,7 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.9.0)
       eslint-plugin-wdio:
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4
       expect-webdriverio:
         specifier: ^5.0.1
@@ -73,7 +73,7 @@ importers:
         version: 15.9.0
       husky:
         specifier: ^9.1.4
-        version: 9.1.4
+        version: 9.1.5
       jsdom:
         specifier: ^24.1.1
         version: 24.1.1
@@ -90,10 +90,10 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
       wdio-electron-service:
-        specifier: 7.0.0-beta.11
-        version: 7.0.0-beta.11(electron@31.4.0)(webdriverio@9.0.4)
+        specifier: 7.0.0-beta.10
+        version: 7.0.0-beta.10(electron@31.4.0)(webdriverio@9.0.4)
       webdriverio:
-        specifier: ^9.0.4
+        specifier: 9.0.4
         version: 9.0.4
       webpack:
         specifier: ^5.93.0
@@ -162,8 +162,8 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  '@electron/packager@18.3.3':
-    resolution: {integrity: sha512-hGXzwbUdxv49XvlYwlVPC6W6j6WaXUAzKkYyyTeiwdhxvHFMfQSEJxVHsQpqMFzZZ7wrr7iqiokOFZ/qkgEzUQ==}
+  '@electron/packager@18.3.4':
+    resolution: {integrity: sha512-u/IxB5nelg+areXbSEWJxg1r4z0TcS1D1Dax106PsgwgPtcFvB6jjGxZVLA0WHSrLpkj6qfigHSuVXzxMTH+Qw==}
     engines: {node: '>= 16.13.0'}
     hasBin: true
 
@@ -576,8 +576,8 @@ packages:
   '@types/node@20.16.1':
     resolution: {integrity: sha512-zJDo7wEadFtSyNz5QITDfRcrhqDvQI1xQNQ0VoizPjM/dVAODqqIUWbJPkvsxmTI0MYRGRikcdjMPhOssnPejQ==}
 
-  '@types/node@22.4.1':
-    resolution: {integrity: sha512-1tbpb9325+gPnKK0dMm+/LMriX0vKxf6RnB0SZUqfyVkQ4fMgUSySqhxE/y8Jvs4NyF1yHzTfG9KlnkIODxPKg==}
+  '@types/node@22.4.2':
+    resolution: {integrity: sha512-nAvM3Ey230/XzxtyDcJ+VjvlzpzoHwLsF7JaDRfoI0ytO0mVheerNmM45CtA0yOILXwXXxOrcUWH3wltX+7PSw==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -693,11 +693,11 @@ packages:
     resolution: {integrity: sha512-uykgVBy8X/SgrExgS9NMxC5TnxkktrlHdzhDt0stgeONPj21oSkBfUu9bxyxEvVfzfL43wppatpCBmdsUuHbvA==}
     engines: {node: '>=18'}
 
-  '@wdio/electron-types@7.0.0-beta.11':
-    resolution: {integrity: sha512-JMcOCA3CkG8SzbzmgzgruRYE/UuoGLbl5SaNlKTOjsOElr8WwUwcpp6I/0lZ3r1B9jDXiXb5x8UGUSV+7ZJZhw==}
+  '@wdio/electron-types@7.0.0-beta.10':
+    resolution: {integrity: sha512-HnPquajLU576cX5dPUk7spBCeziwTDVzd8PS70y8c/K/0iKZNp/W3dywedJ+A08ZxoACI5BiMmHT9G4yt3EzQg==}
 
-  '@wdio/electron-utils@7.0.0-beta.11':
-    resolution: {integrity: sha512-L3D1Wi3VMVKXmA/L/Xveho/4F0Dk4DPB9dkucSWtam7XggNeZS62WLP6ByE9BOD99KsBFVZcdm8LD2UVYXoNqA==}
+  '@wdio/electron-utils@7.0.0-beta.10':
+    resolution: {integrity: sha512-xDbwK7lggQdtRFPA31A7OUJL/9XwMWd+unV3UOSutncyv2zkujw8LIijYFJuGB64CpSeRPPKillC+qqfHgxR+g==}
     engines: {node: '>=18 || >=20'}
 
   '@wdio/globals@9.0.4':
@@ -1446,8 +1446,8 @@ packages:
   electron-publish@24.13.1:
     resolution: {integrity: sha512-2ZgdEqJ8e9D17Hwp5LEq5mLQPjqU3lv/IALvgp+4W8VeNhryfGhYEQC/PgDPMrnWUp+l60Ou5SJLsu+k4mhQ8A==}
 
-  electron-to-chromium@1.5.11:
-    resolution: {integrity: sha512-R1CccCDYqndR25CaXFd6hp/u9RaaMcftMkphmvuepXr5b1vfLkRml6aWVeBhXJ7rbevHkKEMJtz8XqPf7ffmew==}
+  electron-to-chromium@1.5.13:
+    resolution: {integrity: sha512-lbBcvtIJ4J6sS4tb5TLp1b4LyfCdMkwStzXPyAgVgTRAsep4bvrAGaBOP7ZJtQMNJpSQ9SqG4brWOroNaQtm7Q==}
 
   electron@31.4.0:
     resolution: {integrity: sha512-YTwKoAA+nrJMlI1TTHnIXLYWoQLKnhbkz0qxZcI7Hadcy0UaFMFs9xzwvH2MnrRpVJy7RKo49kVGuvSdRl8zMA==}
@@ -2018,8 +2018,8 @@ packages:
     resolution: {integrity: sha512-/1/GPCpDUCCYwlERiYjxoczfP0zfvZMU/OWgQPMya9AbAE24vseigFdhAMObpc8Q4lc/kjutPfUddDYyAmejnA==}
     engines: {node: '>=18.18.0'}
 
-  husky@9.1.4:
-    resolution: {integrity: sha512-bho94YyReb4JV7LYWRWxZ/xr6TtOTt8cMfmQ39MQYJ7f/YE268s3GdghGwi+y4zAeqewE5zYLvuhV0M0ijsDEA==}
+  husky@9.1.5:
+    resolution: {integrity: sha512-rowAVRUBfI0b4+niA4SJMhfQwc107VLkBUgEYYAOQAbqDCnra1nYh83hF/MDmhYs9t9n1E3DuKOrs2LYNC+0Ag==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3207,8 +3207,8 @@ packages:
   spdx-expression-parse@3.0.1:
     resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
 
-  spdx-license-ids@3.0.18:
-    resolution: {integrity: sha512-xxRs31BqRYHwiMzudOrpSiHtZ8i/GeionCBDSilhYRj+9gIcI8wCZTlXZKu9vZIVqViP3dcp9qE5G6AlIaD+TQ==}
+  spdx-license-ids@3.0.20:
+    resolution: {integrity: sha512-jg25NiDV/1fLtSgEgyvVyDunvaNHbuwF9lfNV17gSmPFAlYzdfNBlLtLzXTevwkPj7DhGbmN9VnmJIgLnhvaBw==}
 
   split2@4.2.0:
     resolution: {integrity: sha512-UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg==}
@@ -3527,8 +3527,8 @@ packages:
     resolution: {integrity: sha512-TnbFSbcOCcDgjZ4piURLCbJ3nJhznVh9kw6F6iokjiFPl8ONxe9A6nMDVXDiNbrSfLILs6vB07F7wLBrwPYzJw==}
     engines: {node: '>=10.13.0'}
 
-  wdio-electron-service@7.0.0-beta.11:
-    resolution: {integrity: sha512-NrdtHHBNwUGXbjPqNaeqkSsPtNWF3qTJrlnNCSLhFNT0JsJ8C4Kwb+lyeCmQV45jgr+aaNWENV0r1b4SwaPqtg==}
+  wdio-electron-service@7.0.0-beta.10:
+    resolution: {integrity: sha512-8PSxss4CYSRgrQrKQtuTVuc8eY2Lq1YBopNnltOhjkEqP+h3l1Z1/TY6CbNRpl2dOrK0I9gDmLNH9WCIalvq3A==}
     engines: {node: '>=18 || >=20'}
     peerDependencies:
       electron: '*'
@@ -3838,7 +3838,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@electron/packager@18.3.3':
+  '@electron/packager@18.3.4':
     dependencies:
       '@electron/asar': 3.2.10
       '@electron/get': 3.1.0
@@ -4023,7 +4023,7 @@ snapshots:
       '@inquirer/figures': 1.0.5
       '@inquirer/type': 1.5.2
       '@types/mute-stream': 0.0.4
-      '@types/node': 22.4.1
+      '@types/node': 22.4.2
       '@types/wrap-ansi': 3.0.0
       ansi-escapes: 4.3.2
       cli-spinners: 2.9.2
@@ -4303,7 +4303,7 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
-  '@types/node@22.4.1':
+  '@types/node@22.4.2':
     dependencies:
       undici-types: 6.19.8
 
@@ -4491,11 +4491,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@wdio/electron-types@7.0.0-beta.11': {}
+  '@wdio/electron-types@7.0.0-beta.10': {}
 
-  '@wdio/electron-utils@7.0.0-beta.11':
+  '@wdio/electron-utils@7.0.0-beta.10':
     dependencies:
-      '@electron/packager': 18.3.3
+      '@electron/packager': 18.3.4
       '@wdio/logger': 9.0.4
       debug: 4.3.6(supports-color@8.1.1)
       find-versions: 6.0.0
@@ -4970,7 +4970,7 @@ snapshots:
   browserslist@4.23.3:
     dependencies:
       caniuse-lite: 1.0.30001651
-      electron-to-chromium: 1.5.11
+      electron-to-chromium: 1.5.13
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
 
@@ -5462,7 +5462,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron-to-chromium@1.5.11: {}
+  electron-to-chromium@1.5.13: {}
 
   electron@31.4.0:
     dependencies:
@@ -5985,7 +5985,7 @@ snapshots:
       fs.realpath: 1.0.0
       inflight: 1.0.6
       inherits: 2.0.4
-      minimatch: 3.0.8
+      minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
 
@@ -6156,7 +6156,7 @@ snapshots:
 
   human-signals@8.0.0: {}
 
-  husky@9.1.4: {}
+  husky@9.1.5: {}
 
   iconv-corefoundation@1.1.7:
     dependencies:
@@ -7339,16 +7339,16 @@ snapshots:
   spdx-correct@3.2.0:
     dependencies:
       spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.18
+      spdx-license-ids: 3.0.20
 
   spdx-exceptions@2.5.0: {}
 
   spdx-expression-parse@3.0.1:
     dependencies:
       spdx-exceptions: 2.5.0
-      spdx-license-ids: 3.0.18
+      spdx-license-ids: 3.0.20
 
-  spdx-license-ids@3.0.18: {}
+  spdx-license-ids@3.0.20: {}
 
   split2@4.2.0: {}
 
@@ -7655,15 +7655,15 @@ snapshots:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
 
-  wdio-electron-service@7.0.0-beta.11(electron@31.4.0)(webdriverio@9.0.4):
+  wdio-electron-service@7.0.0-beta.10(electron@31.4.0)(webdriverio@9.0.4):
     dependencies:
       '@vitest/spy': 2.0.5
-      '@wdio/electron-types': 7.0.0-beta.11
-      '@wdio/electron-utils': 7.0.0-beta.11
+      '@wdio/electron-types': 7.0.0-beta.10
+      '@wdio/electron-utils': 7.0.0-beta.10
       '@wdio/logger': 9.0.4
       compare-versions: 6.1.1
       debug: 4.3.6(supports-color@8.1.1)
-      electron-to-chromium: 1.5.11
+      electron-to-chromium: 1.5.13
       fast-copy: 3.0.2
       read-package-up: 11.0.0
       tinyspy: 3.0.0
