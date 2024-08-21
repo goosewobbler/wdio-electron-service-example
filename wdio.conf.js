@@ -1,10 +1,9 @@
-const path = require('path');
-const fs = require('fs');
+const path = require('node:path');
+const fs = require('node:fs');
 
 const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), { encoding: 'utf-8' }));
 
 globalThis.packageJson = packageJson;
-// process.env.TEST = 'true';
 
 process.env.TEST = 'true';
 
