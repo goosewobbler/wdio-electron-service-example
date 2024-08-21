@@ -9,47 +9,47 @@
     "clean:dist": "rm -rf ./dist && mkdir -p ./dist",
     "format": "prettier --write \"**/*.{j,t}s\"",
     "lint": "eslint \"**/*.{j,t}s\"",
-    "prepare": "husky install",
+    "prepare": "husky",
     "test": "wdio run ./wdio.conf.js"
   },
   "devDependencies": {
-    "@testing-library/dom": "^10.1.0",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/webdriverio": "^3.2.1",
-    "@types/mocha": "^10.0.6",
+    "@types/mocha": "^10.0.7",
     "@types/node": "^20.11.17",
-    "@typescript-eslint/eslint-plugin": "^7.10.0",
-    "@typescript-eslint/parser": "^7.10.0",
-    "@vitest/spy": "^1.6.0",
-    "@wdio/cli": "next",
-    "@wdio/globals": "next",
-    "@wdio/local-runner": "next",
-    "@wdio/mocha-framework": "next",
-    "debug": "^4.3.4",
-    "electron": "^30.0.6",
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "@vitest/spy": "^2.0.5",
+    "@wdio/cli": "^9.0.4",
+    "@wdio/globals": "^9.0.4",
+    "@wdio/local-runner": "^9.0.4",
+    "@wdio/mocha-framework": "^9.0.4",
+    "debug": "^4.3.6",
+    "electron": "^31.4.0",
     "electron-builder": "^24.9.1",
-    "eslint": "^9.3.0",
+    "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-wdio": "^8.24.12",
-    "expect-webdriverio": "4.13.0",
+    "eslint-plugin-wdio": "^9.0.4",
+    "expect-webdriverio": "5.0.1",
     "global-jsdom": "^24.0.0",
-    "globals": "^15.3.0",
-    "husky": "^9.0.10",
-    "jsdom": "^24.0.0",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "tsx": "^4.16.2",
-    "typescript": "^5.3.3",
-    "wdio-electron-service": "next",
-    "webdriverio": "^8.31.1",
-    "webpack": "^5.90.1",
+    "globals": "^15.9.0",
+    "husky": "^9.1.4",
+    "jsdom": "^24.1.1",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "tsx": "^4.17.0",
+    "typescript": "^5.5.4",
+    "wdio-electron-service": "^7.0.0",
+    "webdriverio": "^9.0.4",
+    "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "pnpm": {
     "overrides": {
-      "expect-webdriverio": "4.9.3"
+      "expect-webdriverio": "^5.0.1"
     }
   },
   "lint-staged": {
@@ -75,5 +75,6 @@
         "AppImage"
       ]
     }
-  }
+  },
+  "packageManager": "pnpm@9.7.1+sha512.faf344af2d6ca65c4c5c8c2224ea77a81a5e8859cbc4e06b1511ddce2f0151512431dd19e6aff31f2c6a8f5f2aced9bd2273e1fed7dd4de1868984059d2c4247"
 }
