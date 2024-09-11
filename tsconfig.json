@@ -1,9 +1,4 @@
 {
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  },
   "compilerOptions": {
     "target": "ES2020",
     "module": "ESNext",
@@ -26,7 +21,7 @@
     "allowJs": true,
     "checkJs": true,
     "noEmit": true,
-    "types": ["node", "mocha", "webdriverio/async", "expect-webdriverio"],
+    "types": ["node", "mocha"],
     "typeRoots": ["./node_modules/@types"]
   },
   "include": ["**/*.ts"],
