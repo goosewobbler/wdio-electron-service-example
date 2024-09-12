@@ -90,7 +90,7 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4
       wdio-electron-service:
-        specifier: 7.0.2
+        specifier: ^7.0.2
         version: 7.0.2(electron@32.0.2)(webdriverio@9.0.7)
       webdriverio:
         specifier: ^9.0.7
@@ -5077,7 +5077,7 @@ snapshots:
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.6(supports-color@8.1.1)
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
