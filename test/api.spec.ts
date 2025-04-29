@@ -1,4 +1,4 @@
-import { expect } from '@wdio/globals';
+import { $, expect } from '@wdio/globals';
 import { browser } from 'wdio-electron-service';
 import type { Mock } from '@vitest/spy';
 
@@ -607,7 +607,7 @@ describe('browser.electron', () => {
         const mockGetName = await browser.electron.mock('app', 'getName');
         const mockImpl = mockGetName.getMockImplementation() as () => undefined;
 
-        expect(mockImpl()).toBeUndefined();
+        expect(mockImpl).toBeUndefined();
       });
     });
 
