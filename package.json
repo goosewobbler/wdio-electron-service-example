@@ -5,6 +5,7 @@
   "scripts": {
     "build": "webpack && cp ./src/index.html ./dist && electron-builder -p never",
     "ci": "pnpm build && pnpm test && pnpm lint",
+    "ci:logs": "cat ./wdio-logs/wdio-0-0.log && cat ./wdio-logs/wdio-0-1.log && cat ./wdio-logs/wdio-0-2.log && cat ./wdio-logs/wdio-0-3.log",
     "clean": "pnpm clean:dist && rm -rf ./node_modules ./all-logs pnpm-lock.yaml",
     "clean:dist": "rm -rf ./dist && mkdir -p ./dist",
     "format": "prettier --write \"**/*.{j,t}s\"",
