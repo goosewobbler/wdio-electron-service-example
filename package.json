@@ -28,7 +28,7 @@
     "debug": "^4.4.0",
     "electron": "^35.2.1",
     "electron-builder": "^26.0.12",
-    "eslint": "^9.25.1",
+    "eslint": "^9.26.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-wdio": "^9.9.1",
     "expect-webdriverio": "5.1.0",
