@@ -33,7 +33,7 @@
     "eslint-plugin-wdio": "^9.9.1",
     "expect-webdriverio": "5.1.0",
     "global-jsdom": "^26.0.0",
-    "globals": "^16.0.0",
+    "globals": "^16.1.0",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
     "lint-staged": "^15.5.1",
