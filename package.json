@@ -19,7 +19,7 @@
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.15.3",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
-    "@typescript-eslint/parser": "^8.31.1",
+    "@typescript-eslint/parser": "^8.32.0",
     "@vitest/spy": "^3.1.2",
     "@wdio/cli": "^9.12.7",
     "@wdio/globals": "^9.12.7",
