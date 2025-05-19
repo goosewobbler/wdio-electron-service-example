@@ -18,7 +18,7 @@
     "@testing-library/webdriverio": "^3.2.1",
     "@types/mocha": "^10.0.10",
     "@types/node": "^22.15.3",
-    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.31.1",
     "@vitest/spy": "^3.1.2",
     "@wdio/cli": "^9.12.7",
