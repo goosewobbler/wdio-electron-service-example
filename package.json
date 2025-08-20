@@ -1,87 +1,36 @@
 {
-  "name": "wdio-electron-service-example",
+  "name": "wdio-electron-service-example-monorepo",
   "version": "1.0.0",
-  "main": "./dist/main.js",
+  "private": true,
   "scripts": {
-    "build": "webpack && cp ./src/index.html ./dist && electron-builder -p never",
-    "ci": "pnpm build && pnpm test && pnpm lint",
-    "ci:logs": "cat ./wdio-logs/wdio-0-0.log && cat ./wdio-logs/wdio-0-1.log && cat ./wdio-logs/wdio-0-2.log && cat ./wdio-logs/wdio-0-3.log",
-    "clean": "pnpm clean:dist && rm -rf ./node_modules ./all-logs pnpm-lock.yaml",
-    "clean:dist": "rm -rf ./dist && mkdir -p ./dist",
-    "format": "prettier --write \"**/*.{j,t}s\"",
-    "lint": "eslint \"**/*.{j,t}s\"",
-    "prepare": "husky",
-    "test": "cross-env DEBUG=wdio-electron-service:* wdio run ./wdio.conf.js"
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "biome check --formatter-enabled=false --linter-enabled=true . && turbo run lint",
+    "lint:fix": "biome check --write --formatter-enabled=false --linter-enabled=true . && turbo run lint:fix",
+    "lint:fix:unsafe": "biome check --write --formatter-enabled=false --linter-enabled=true --unsafe . && turbo run lint:fix",
+    "format": "biome format --write .",
+    "format:check": "biome check --formatter-enabled=true --linter-enabled=false .",
+    "check": "turbo run check",
+    "ci": "turbo run ci",
+    "clean": "turbo run clean && rm -rf node_modules pnpm-lock.yaml",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "@testing-library/dom": "^10.4.1",
-    "@testing-library/webdriverio": "^3.2.1",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^24.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.40.0",
+    "@biomejs/biome": "^2.2.0",
     "@typescript-eslint/parser": "^8.40.0",
-    "@vitest/spy": "^3.2.4",
-    "@wdio/cli": "^9.19.1",
-    "@wdio/globals": "^9.17.0",
-    "@wdio/local-runner": "^9.19.1",
-    "@wdio/mocha-framework": "^9.19.1",
-    "cross-env": "^10.0.0",
-    "debug": "^4.4.1",
-    "electron": "^37.3.1",
-    "electron-builder": "^26.0.12",
     "eslint": "^9.33.0",
-    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-wdio": "^9.16.2",
-    "expect-webdriverio": "5.4.2",
-    "global-jsdom": "^26.0.0",
     "globals": "^16.3.0",
     "husky": "^9.1.7",
-    "jsdom": "^26.1.0",
     "lint-staged": "^16.1.5",
-    "prettier": "^3.6.2",
-    "tsx": "^4.20.4",
-    "typescript": "^5.9.2",
-    "wdio-electron-service": "9.0.0-next.5",
-    "webdriverio": "^9.19.1",
-    "webpack": "^5.101.3",
-    "webpack-cli": "^6.0.1"
+    "turbo": "^2.5.6"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "lint-staged": {
-    "**/*.{js,ts}": [
-      "eslint --fix"
-    ],
-    "**/*.{yml,json,md,ts,js}": [
-      "prettier --write"
-    ]
+    "**/*.{j,t}s": ["biome check --write", "eslint --fix --cache"],
+    "**/*.{json,md}": ["biome format --write ."]
   },
-  "build": {
-    "asar": true,
-    "appId": "com.wdio-electron-service-example.demo",
-    "copyright": "goosewobbler",
-    "productName": "wdio-electron-service-example",
-    "files": [
-      "./dist/*"
-    ],
-    "linux": {
-      "executableName": "wdio-electron-service-example",
-      "category": "Utility",
-      "target": [
-        "AppImage"
-      ]
-    }
-  },
-  "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d",
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "edgedriver",
-      "esbuild",
-      "geckodriver"
-    ],
-    "onlyBuiltDependencies": [
-      "electron"
-    ]
-  }
+  "packageManager": "pnpm@10.3.0+sha512.ee592eda8815a8a293c206bb0917c4bb0ff274c50def7cbc17be05ec641fc2d1b02490ce660061356bd0d126a4d7eb2ec8830e6959fb8a447571c631d5a2442d"
 }

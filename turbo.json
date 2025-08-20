@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "webpack.config.js", "package.json"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["wdio-logs/**"],
+      "inputs": ["test/**", "wdio.conf.js"]
+    },
+    "lint": {
+      "outputs": [],
+      "inputs": ["test/**", "eslint.config.js"]
+    },
+    "format": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json"]
+    },
+    "check": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "ci": {
+      "dependsOn": ["build", "test", "lint", "check"]
+    }
+  }
+}

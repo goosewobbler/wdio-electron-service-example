@@ -1,5 +1,9 @@
-const path = require('node:path');
-const fs = require('node:fs');
+import fs from 'node:fs';
+import path, { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const packageJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), { encoding: 'utf-8' }));
 
@@ -7,11 +11,11 @@ globalThis.packageJson = packageJson;
 
 process.env.TEST = 'true';
 
-const config = {
+export const config = {
   services: ['electron'],
   capabilities: [
     {
-      'browserName': 'electron',
+      browserName: 'electron',
       'wdio:electronServiceOptions': {
         appArgs: ['foo', 'bar=baz'],
         restoreMocks: true,
@@ -33,5 +37,3 @@ const config = {
   },
   autoXvfb: true,
 };
-
-module.exports = { config };
