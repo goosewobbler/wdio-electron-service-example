@@ -764,7 +764,7 @@ describe('browser.execute - workaround for TSX issue', () => {
 
   it('should handle executing a function which declares a function', async () => {
     expect(
-      await browser.execute(() => {
+      await browser.electron.execute(() => {
         function innerFunc() {
           return 'executed inner function';
         }
@@ -775,7 +775,7 @@ describe('browser.execute - workaround for TSX issue', () => {
 
   it('should handle executing a function which declares an arrow function', async () => {
     expect(
-      await browser.execute(() => {
+      await browser.electron.execute(() => {
         const innerFunc = () => 'executed inner function';
         return innerFunc();
       }),
@@ -789,7 +789,14 @@ describe('showOpenDialog with complex object', () => {
   it('should be mocked', async () => {
     const mockShowOpenDialog = await browser.electron.mock('dialog', 'showOpenDialog');
 
+    // Check if button exists before clicking (potential fix)
     const showDialogButton = await $('.show-dialog');
+    const buttonExists = await showDialogButton.isExisting();
+
+    if (!buttonExists) {
+      throw new Error('Show dialog button not found in DOM');
+    }
+
     await showDialogButton.click();
 
     await browser.waitUntil(
@@ -800,5 +807,22 @@ describe('showOpenDialog with complex object', () => {
     );
 
     expect(mockShowOpenDialog).toHaveBeenCalledTimes(1);
+    // dialog.showOpenDialog is called with (window, options), so we check the second parameter
+    expect(mockShowOpenDialog.mock.calls[0][1]).toEqual(
+      expect.objectContaining({
+        title: 'Select txt',
+        filters: [
+          {
+            name: 'TXT',
+            extensions: ['txt'],
+          },
+          {
+            name: 'All Files',
+            extensions: ['*'],
+          },
+        ],
+        properties: ['openFile', 'openDirectory'],
+      }),
+    );
   });
 });
