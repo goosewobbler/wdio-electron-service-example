@@ -37,6 +37,10 @@
       "dependsOn": ["format:check", "lint"],
       "outputs": ["dist/**", "wdio-logs/**"],
       "inputs": ["src/**", "test/**", "rollup.config.*", "wdio.conf.js", "package.json"]
+    },
+    "ci:logs": {
+      "outputs": [],
+      "inputs": ["wdio-logs/**"]
     }
   }
 }
