@@ -788,7 +788,16 @@ describe('showOpenDialog with complex object', () => {
   // https://github.com/webdriverio-community/wdio-electron-service/issues/895
   it('should be mocked', async () => {
     const mockShowOpenDialog = await browser.electron.mock('dialog', 'showOpenDialog');
-    await (await $('.show-dialog')).click();
+
+    const showDialogButton = await $('.show-dialog');
+    await showDialogButton.click();
+
+    await browser.waitUntil(
+      async () => {
+        return mockShowOpenDialog.mock.calls.length > 0;
+      },
+      { timeout: 5000, timeoutMsg: 'Mock was not called within timeout' },
+    );
 
     expect(mockShowOpenDialog).toHaveBeenCalledTimes(1);
   });
