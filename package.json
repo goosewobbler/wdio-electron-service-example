@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{j,t}s\"",
     "lint": "eslint \"**/*.{j,t}s\"",
     "prepare": "husky",
-    "test": "xvfb-maybe wdio run ./wdio.conf.js"
+    "test": "wdio run ./wdio.conf.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
