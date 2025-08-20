@@ -1,10 +1,15 @@
-import { $, expect } from '@wdio/globals';
-import { browser } from 'wdio-electron-service';
 import type { Mock } from '@vitest/spy';
+import { $, expect } from '@wdio/globals';
+
+let browser: typeof import('wdio-electron-service').browser;
 
 const { name: pkgAppName, version: pkgAppVersion } = globalThis.packageJson;
 
 describe('browser.electron', () => {
+  before(async () => {
+    ({ browser } = await import('wdio-electron-service'));
+  });
+
   describe('mock', () => {
     it('should mock an electron API function', async () => {
       const mockShowOpenDialog = await browser.electron.mock('dialog', 'showOpenDialog');
@@ -762,9 +767,13 @@ describe('browser.execute - workaround for TSX issue', () => {
   // https://github.com/webdriverio-community/wdio-electron-service/issues/756
   // https://github.com/privatenumber/tsx/issues/113
 
+  before(async () => {
+    ({ browser } = await import('wdio-electron-service'));
+  });
+
   it('should handle executing a function which declares a function', async () => {
     expect(
-      await browser.execute(() => {
+      await browser.electron.execute(() => {
         function innerFunc() {
           return 'executed inner function';
         }
@@ -775,7 +784,7 @@ describe('browser.execute - workaround for TSX issue', () => {
 
   it('should handle executing a function which declares an arrow function', async () => {
     expect(
-      await browser.execute(() => {
+      await browser.electron.execute(() => {
         const innerFunc = () => 'executed inner function';
         return innerFunc();
       }),
@@ -786,10 +795,47 @@ describe('browser.execute - workaround for TSX issue', () => {
 describe('showOpenDialog with complex object', () => {
   // Tests for the following issue
   // https://github.com/webdriverio-community/wdio-electron-service/issues/895
+  before(async () => {
+    ({ browser } = await import('wdio-electron-service'));
+  });
+
   it('should be mocked', async () => {
     const mockShowOpenDialog = await browser.electron.mock('dialog', 'showOpenDialog');
-    await (await $('.show-dialog')).click();
+
+    // Check if button exists before clicking (potential fix)
+    const showDialogButton = await $('.show-dialog');
+    const buttonExists = await showDialogButton.isExisting();
+
+    if (!buttonExists) {
+      throw new Error('Show dialog button not found in DOM');
+    }
+
+    await showDialogButton.click();
+
+    await browser.waitUntil(
+      async () => {
+        return mockShowOpenDialog.mock.calls.length > 0;
+      },
+      { timeout: 5000, timeoutMsg: 'Mock was not called within timeout' },
+    );
 
     expect(mockShowOpenDialog).toHaveBeenCalledTimes(1);
+    // dialog.showOpenDialog is called with (window, options), so we check the second parameter
+    expect(mockShowOpenDialog.mock.calls[0][1]).toEqual(
+      expect.objectContaining({
+        title: 'Select txt',
+        filters: [
+          {
+            name: 'TXT',
+            extensions: ['txt'],
+          },
+          {
+            name: 'All Files',
+            extensions: ['*'],
+          },
+        ],
+        properties: ['openFile', 'openDirectory'],
+      }),
+    );
   });
 });

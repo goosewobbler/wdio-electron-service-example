@@ -1,0 +1,46 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "tasks": {
+    "build": {
+      "outputs": ["dist/**"],
+      "inputs": ["src/**", "rollup.config.*", "package.json"]
+    },
+    "test": {
+      "dependsOn": ["build"],
+      "outputs": ["wdio-logs/**"],
+      "inputs": ["test/**", "wdio.conf.js"]
+    },
+    "lint": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json", "eslint.config.js"]
+    },
+    "lint:fix": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json", "eslint.config.js"]
+    },
+    "lint:fix:unsafe": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json", "eslint.config.js"]
+    },
+    "format": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json"]
+    },
+    "format:check": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "ci": {
+      "dependsOn": ["format:check", "lint"],
+      "outputs": ["dist/**", "wdio-logs/**"],
+      "inputs": ["src/**", "test/**", "rollup.config.*", "wdio.conf.js", "package.json"]
+    },
+    "ci:logs": {
+      "outputs": [],
+      "inputs": ["wdio-logs/**"]
+    }
+  }
+}

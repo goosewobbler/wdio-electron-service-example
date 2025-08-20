@@ -1,7 +1,11 @@
 import { expect } from '@wdio/globals';
-import { browser } from 'wdio-electron-service';
+
+let browser: typeof import('wdio-electron-service').browser;
 
 describe('application', () => {
+  before(async () => {
+    ({ browser } = await import('wdio-electron-service'));
+  });
   it('should launch the application', async () => {
     await expect(browser).toHaveTitle('Test');
   });

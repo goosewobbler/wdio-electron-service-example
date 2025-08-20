@@ -1,10 +1,7 @@
-import { app, BrowserWindow, ipcMain, dialog } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain } from 'electron';
+
 const isTest = process.env.TEST === 'true';
 const isSplashEnabled = Boolean(process.env.ENABLE_SPLASH_WINDOW);
-
-if (isTest) {
-  require('wdio-electron-service/main');
-}
 
 const appPath = app.getAppPath();
 const appRootPath = `${appPath}/dist`;
@@ -96,7 +93,9 @@ app.on('ready', () => {
         { name: 'TXT', extensions: ['txt'] },
         { name: 'All Files', extensions: ['*'] },
       ],
+      properties: ['openFile', 'openDirectory'],
     });
     console.log(result);
+    return result;
   });
 });

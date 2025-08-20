@@ -1,6 +1,7 @@
 import { expect } from '@wdio/globals';
-import { browser } from 'wdio-electron-service';
 import type { BrowserWindow } from 'electron';
+
+let browser: typeof import('wdio-electron-service').browser;
 
 const waitTextOfElement = async (element: ReturnType<typeof browser.$>, expectedText: string) => {
   // respect configuration for the timeout and interval
@@ -16,6 +17,10 @@ const waitTextOfElement = async (element: ReturnType<typeof browser.$>, expected
 };
 
 describe('interaction', () => {
+  before(async () => {
+    ({ browser } = await import('wdio-electron-service'));
+  });
+
   describe('keyboard input', () => {
     it('should detect keyboard input', async () => {
       const expectedText = 'YO';
