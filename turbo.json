@@ -3,7 +3,7 @@
   "tasks": {
     "build": {
       "outputs": ["dist/**"],
-      "inputs": ["src/**", "webpack.config.js", "package.json"]
+      "inputs": ["src/**", "rollup.config.*", "package.json"]
     },
     "test": {
       "dependsOn": ["build"],
@@ -12,13 +12,21 @@
     },
     "lint": {
       "outputs": [],
-      "inputs": ["test/**", "eslint.config.js"]
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json", "eslint.config.js"]
+    },
+    "lint:fix": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json", "eslint.config.js"]
+    },
+    "lint:fix:unsafe": {
+      "outputs": [],
+      "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json", "eslint.config.js"]
     },
     "format": {
       "outputs": [],
       "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json"]
     },
-    "check": {
+    "format:check": {
       "outputs": [],
       "inputs": ["src/**", "test/**", "*.js", "*.ts", "*.json", "biome.json"]
     },
@@ -26,7 +34,9 @@
       "cache": false
     },
     "ci": {
-      "dependsOn": ["build", "test", "lint", "check"]
+      "dependsOn": ["format:check", "lint"],
+      "outputs": ["dist/**", "wdio-logs/**"],
+      "inputs": ["src/**", "test/**", "rollup.config.*", "wdio.conf.js", "package.json"]
     }
   }
 }

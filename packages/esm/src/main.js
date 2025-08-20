@@ -6,7 +6,7 @@ const isSplashEnabled = Boolean(process.env.ENABLE_SPLASH_WINDOW);
 const appPath = app.getAppPath();
 const appRootPath = `${appPath}/dist`;
 const resourcePaths = {
-  preloadJs: `${appRootPath}/preload.js`,
+  preloadJs: `${appRootPath}/preload.cjs`,
   splashHtml: `${appRootPath}/splash.html`,
   indexHtml: `${appRootPath}/index.html`,
 };

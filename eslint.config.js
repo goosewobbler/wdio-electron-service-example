@@ -1,8 +1,17 @@
 import tsParser from '@typescript-eslint/parser';
 import * as wdio from 'eslint-plugin-wdio';
-import globals from 'globals';
 
 export default [
+  // Ignored dirs
+  {
+    ignores: [
+      '**/dist/**/*',
+      '**/node_modules/**/*',
+      '**/wdio-logs/**/*',
+      '**/coverage/**/*',
+    ],
+  },
+  // E2E test files - WebdriverIO specific rules
   {
     files: ['packages/*/test/**/*.ts', 'packages/*/test/**/*.js'],
     languageOptions: {
@@ -12,18 +21,14 @@ export default [
         sourceType: 'module',
       },
       globals: {
-        ...globals.mocha,
-        browser: 'readonly',
-        $: 'readonly',
-        $$: 'readonly',
-        expect: 'readonly',
+        ...wdio.configs['flat/recommended'].globals,
       },
     },
     plugins: {
-      'wdio': wdio,
+      wdio,
     },
     rules: {
-      ...wdio.configs.recommended.rules,
+      ...wdio.configs['flat/recommended'].rules,
     },
   },
 ];
