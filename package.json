@@ -40,7 +40,7 @@
     "prettier": "^3.6.2",
     "tsx": "^4.20.4",
     "typescript": "^5.9.2",
-    "wdio-electron-service": "next",
+    "wdio-electron-service": "9.0.0-next.4",
     "webdriverio": "^9.19.1",
     "webpack": "^5.101.3",
     "webpack-cli": "^6.0.1"
