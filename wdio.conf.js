@@ -31,6 +31,7 @@ const config = {
     ui: 'bdd',
     timeout: 30000,
   },
+  autoXvfb: true,
 };
 
 module.exports = { config };
