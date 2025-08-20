@@ -65,6 +65,9 @@ importers:
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
+      '@vitest/spy':
+        specifier: ^3.2.4
+        version: 3.2.4
       '@wdio/cli':
         specifier: catalog:default
         version: 9.19.1(@types/node@24.3.0)(expect-webdriverio@5.4.2)(puppeteer-core@22.15.0)
@@ -104,6 +107,9 @@ importers:
       '@types/node':
         specifier: ^24.3.0
         version: 24.3.0
+      '@vitest/spy':
+        specifier: ^3.2.4
+        version: 3.2.4
       '@wdio/cli':
         specifier: catalog:default
         version: 9.19.1(@types/node@24.3.0)(expect-webdriverio@5.4.2)(puppeteer-core@22.15.0)
