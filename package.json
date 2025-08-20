@@ -11,7 +11,7 @@
     "format": "prettier --write \"**/*.{j,t}s\"",
     "lint": "eslint \"**/*.{j,t}s\"",
     "prepare": "husky",
-    "test": "wdio run ./wdio.conf.js"
+    "test": "DEBUG=wdio-electron-service:* wdio run ./wdio.conf.js"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.1",
