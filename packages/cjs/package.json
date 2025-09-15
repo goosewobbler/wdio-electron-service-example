@@ -25,7 +25,7 @@
     "cross-env": "^10.0.0",
     "electron": "catalog:default",
     "electron-builder": "^26.0.12",
-    "rollup": "^4.46.3",
+    "rollup": "^4.50.2",
     "wdio-electron-service": "catalog:default",
     "webdriverio": "catalog:default"
   },
