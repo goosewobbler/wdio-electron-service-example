@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.3.0",
-    "@vitest/spy": "^3.2.4",
+    "@vitest/spy": "^4.0.3",
     "@wdio/cli": "catalog:default",
     "@wdio/globals": "catalog:default",
     "@wdio/local-runner": "catalog:default",
