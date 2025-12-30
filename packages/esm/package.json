@@ -28,7 +28,7 @@
     "electron-builder": "^26.0.12",
     "rollup": "^4.46.3",
     "typescript": "^5.9.2",
-    "wdio-electron-service": "catalog:default",
+    "@wdio/electron-service": "catalog:default",
     "webdriverio": "catalog:default"
   },
   "engines": {

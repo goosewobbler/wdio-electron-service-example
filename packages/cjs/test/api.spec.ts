@@ -1,13 +1,13 @@
 import type { Mock } from '@vitest/spy';
 import { $, expect } from '@wdio/globals';
 
-let browser: typeof import('wdio-electron-service').browser;
+let browser: typeof import('@wdio/electron-service').browser;
 
 const { name: pkgAppName, version: pkgAppVersion } = globalThis.packageJson;
 
 describe('browser.electron', () => {
   before(async () => {
-    ({ browser } = await import('wdio-electron-service'));
+    ({ browser } = await import('@wdio/electron-service'));
   });
 
   describe('mock', () => {
@@ -768,7 +768,7 @@ describe('browser.execute - workaround for TSX issue', () => {
   // https://github.com/privatenumber/tsx/issues/113
 
   before(async () => {
-    ({ browser } = await import('wdio-electron-service'));
+    ({ browser } = await import('@wdio/electron-service'));
   });
 
   it('should handle executing a function which declares a function', async () => {
@@ -796,7 +796,7 @@ describe('showOpenDialog with complex object', () => {
   // Tests for the following issue
   // https://github.com/webdriverio-community/wdio-electron-service/issues/895
   before(async () => {
-    ({ browser } = await import('wdio-electron-service'));
+    ({ browser } = await import('@wdio/electron-service'));
   });
 
   it('should be mocked', async () => {
